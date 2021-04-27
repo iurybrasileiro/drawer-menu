@@ -23,6 +23,7 @@
 		"react",
     "react-hooks",
 		"@typescript-eslint",
+    "eslint-plugin-import-helpers",
     "prettier"
 	],
 	"rules": {
