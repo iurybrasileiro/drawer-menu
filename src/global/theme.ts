@@ -10,4 +10,23 @@ export default {
       tertiary: bittersweet,
     },
   },
+
+  font: {
+    family: {
+      black: 'Rubik-Black',
+      blackItalic: 'Rubik-BlackItalic',
+      bold: 'Rubik-Bold',
+      boldItalic: 'Rubik-BoldItalic',
+      extraBold: 'Rubik-ExtraBold',
+      extraBoldItalic: 'Rubik-ExtraBoldItalic',
+      italic: 'Rubik-Italic',
+      light: 'Rubik-Light',
+      lightItalic: 'Rubik-LightItalic',
+      medium: 'Rubik-Medium',
+      mediumItalic: 'Rubik-MediumItalic',
+      regular: 'Rubik-Regular',
+      semiBold: 'Rubik-SemiBold',
+      semiBoldItalic: 'Rubik-SemiBoldItalic',
+    },
+  },
 };
