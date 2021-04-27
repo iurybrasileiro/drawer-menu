@@ -1,13 +1,18 @@
+import 'react-native-gesture-handler';
+
 import React from 'react';
-import { View } from 'react-native';
 
 import { ThemeProvider } from 'styled-components';
 
+import { Drawer } from './components';
 import theme from './global/theme';
+import Home from './screens/Home';
 
 const Main: React.FC = () => (
   <ThemeProvider theme={theme}>
-    <View />
+    <Drawer>
+      <Home />
+    </Drawer>
   </ThemeProvider>
 );
 

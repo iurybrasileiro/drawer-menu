@@ -20,7 +20,7 @@ const Icon: React.FC<IIconProps> = ({ name, size, color }) => {
     <RNIcon
       name={name}
       size={size || 30}
-      color={color || theme.colors.global.secondary}
+      color={color || theme.colors.global.primary}
     />
   );
 };
