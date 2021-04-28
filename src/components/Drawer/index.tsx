@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useMemo } from 'react';
-import { Dimensions, StatusBar } from 'react-native';
+import { Dimensions, Platform, StatusBar } from 'react-native';
 import {
   Extrapolate,
   interpolate,
@@ -8,9 +8,10 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 
+import { useTheme } from 'styled-components';
+
 import Icon from '../Icon';
 import iconHelper from '../Icon/iconHelper';
-import { Header } from './components';
 import {
   Container,
   Content,
@@ -41,17 +42,25 @@ export const useDrawer = (): IDrawerContext => {
 };
 
 const Drawer: React.FC = ({ children }) => {
+  const theme = useTheme();
+
   const animation = useSharedValue(0);
+
+  const changeStatuBarBackgorundColor = useCallback(color => {
+    if (Platform.OS === 'android') StatusBar.setBackgroundColor(color);
+  }, []);
 
   const toggleDrawer = useCallback(() => {
     if (animation.value) {
       animation.value = withTiming(0, { duration: 400 });
+      changeStatuBarBackgorundColor(theme.colors.global.primary);
       StatusBar.setBarStyle('dark-content');
     } else {
+      changeStatuBarBackgorundColor(theme.colors.global.secondary);
       StatusBar.setBarStyle('light-content');
       animation.value = withTiming(1, { duration: 400 });
     }
-  }, [animation]);
+  }, [animation, changeStatuBarBackgorundColor, theme]);
 
   const drawerContainerStyle = useAnimatedStyle(() => ({
     transform: [
