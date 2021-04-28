@@ -1,12 +1,8 @@
-import { Dimensions } from 'react-native';
-
 import { fontSizePercentage } from '~/utils';
 
 const white = '#FFFFFF';
 const governorBay = '#4e37b2';
 const bittersweet = '#f77a58';
-
-const { width, height } = Dimensions.get('window');
 
 export default {
   colors: {
@@ -15,11 +11,6 @@ export default {
       secondary: governorBay,
       tertiary: bittersweet,
     },
-  },
-
-  window: {
-    width,
-    height,
   },
 
   font: {

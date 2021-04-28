@@ -10,11 +10,6 @@ declare module 'styled-components' {
       };
     };
 
-    window: {
-      width: number;
-      height: number;
-    };
-
     font: {
       size: (size: number) => number;
       family: {

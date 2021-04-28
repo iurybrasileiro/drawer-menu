@@ -1,4 +1,4 @@
-import { Dimensions, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import {
   getBottomSpace,
@@ -8,17 +8,16 @@ import Animated from 'react-native-reanimated';
 
 import styled from 'styled-components/native';
 
-const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
-
 export const Container = styled.View`
   flex: 1;
+  justify-content: center;
 
   background: ${({ theme }) => theme.colors.global.secondary};
 `;
 
 export const DrawerContainer = styled(Animated.View)`
-  width: ${WIDTH}px;
-  height: ${HEIGHT}px;
+  width: 100%;
+  height: 100%;
 
   flex-direction: row;
 
@@ -46,8 +45,8 @@ export const Dismiss = styled.TouchableOpacity.attrs({
 `;
 
 export const Content = styled(Animated.View)`
-  width: ${WIDTH}px;
-  height: ${HEIGHT}px;
+  width: 100%;
+  height: 100%;
 
   background: ${({ theme }) => theme.colors.global.primary};
 `;
